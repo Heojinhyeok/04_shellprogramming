@@ -4,18 +4,29 @@
 1) 명령어
 	grep CMD
 		# grep OPTIONS PATTERNS file1
+		
 		OPTION: i. -v, -l, n, -r, -w
+		
 		PATTERNS: *  .  ^root  root$  [abc] [a-c] [^a] 
+		
 	sed CMD
 		p# sed -n '1,3p' /etc/hosts
+		
 		d# sed '1,3d' /etc/hosts
+		
 		s# sed '/main/s/192.168.10.10/192.168.10.20/' /etc/hosts
+		
 	awk CMD
 		# awk 'statement {action}' file
+		
 		# awk -F: '$3 >= 1000 && $3 <= 60000 {print $1}' /etc/passwd 
+		
 		# df -h / | tail -1 | awk '{print $6}' | awk -F% '{print $1}'
+		
 		# ifconfig eth0 | grep inet | grep -v inet6 | awk '{print $2}' | awk -F: '{print $2}'
+		
 		# ps -elf | awk '$2 == "Z" {print $0}'
+		
 	+
 	CMD(sort CMD, cut CMD, ...)
 2) 쉘의 특성 
